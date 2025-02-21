@@ -10,31 +10,6 @@
 
 / {
 
-        behaviors {
-                /*
-                * Tap-Hold Configuration
-                * (e.g., Space when tapped, Layer 2 when held)
-                */
-                l1_del: hold_tap {
-                        compatible = "zmk,behavior-hold-tap";
-                        flavor = "tap-preferred";
-                        tapping-term-ms = <200>;
-                        quick-tap-ms = <150>;
-                        bindings = <&mo 1>, <&kp DEL>;
-                };
-
-                /*
-                * Custom Layer Tap
-                * (Tap for Backspace, Hold for Layer 2)
-                */
-                l2_bspc: hold_tap {
-                        compatible = "zmk,behavior-hold-tap";
-                        flavor = "balanced";
-                        tapping-term-ms = <180>;
-                        bindings = <&mo 2>, <&kp BSPC>;
-                };
-        };
-
         keymap {
                 compatible = "zmk,keymap";
 
@@ -48,7 +23,7 @@
    &none &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &none
    &none &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &none
    &none &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &none
-                  &kp LGUI &l2_bspc &kp SPACE   &kp RET &l1_del &kp RALT
+                  &kp LGUI &lt 2 BSPC &kp SPACE   &kp RET &lt 1 DEL &kp RALT
                         >;
                 };
                 lower_layer {
