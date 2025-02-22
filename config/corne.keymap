@@ -11,13 +11,13 @@
 / {
         behaviors {
                 lt_impl: layer-tap-by-hold-tap {
-                compatible = "zmk,behavior-hold-tap";
-                label = "LAYER_TAP_BY_HOLD_TAP";
-                #binding-cells = <2>;
-                tapping-term-ms = <200>;
-                quick-tap-ms = <0>;
-                flavor = "hold-preferred";
-                bindings = <&mo>, <&kp>;
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "LAYER_TAP_BY_HOLD_TAP";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <0>;
+                        flavor = "hold-preferred";
+                        bindings = <&mo>, <&kp>;
                 };
 
                 td1: tap_dance_1 {
@@ -36,6 +36,8 @@
                         tapping-term-ms = <200>;
                         bindings = <&kp FSLH>, <&kp BSLH>;
                 };
+        };
+
 
         keymap {
                 compatible = "zmk,keymap";
