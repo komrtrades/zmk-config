@@ -20,16 +20,13 @@
             bindings = <&mo>, <&kp>;
         };
 
-        td_slash_backslash: tap-dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_SLASH_BACKSLASH";
-            // Single tap: outputs forward slash
-            bindings = <&kp FSLH>;
-            // Double tap: outputs backslash
-            tap_bindings = <&kp BSLS>;
+        td1: tap_dance_1 {
+                compatible = "zmk,behavior-tap-dance";
+                label = "TAP_DANCE_1";
+                #binding-cells = <0>;
+                tapping-term-ms = <200>;
+                bindings = <&mt LCTRL TAB>, <&kp ESC>;
         };
-
-
     };
 
         keymap {
