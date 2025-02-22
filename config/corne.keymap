@@ -11,11 +11,11 @@
 
 / {
     combos {
-        combo_esc {
-            compatible = "zmk,combos";
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            bindings = <&kp ESC>;
+        combo_tab {
+                compatible = "zmk,combos";
+                timeout-ms = <50>;
+                key-positions = <7 8>;
+                bindings = <&kp TAB>;
         };
     };
 };
