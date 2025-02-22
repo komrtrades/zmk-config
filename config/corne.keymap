@@ -28,7 +28,6 @@
                         bindings = <&mt LCTRL TAB>, <&kp ESC>;
                 };
 
-                /* Tap-dance for / and \ */
                 td2: tap_dance_2 {
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_2";
