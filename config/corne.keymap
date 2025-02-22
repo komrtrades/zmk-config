@@ -10,67 +10,64 @@
 
 
 / {
-    combos {
-        combo_esc {
-            compatible = "zmk,combos";
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            bindings = <&kp ESC>;
+        behaviors {
+                lt_impl: layer-tap-by-hold-tap {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "LAYER_TAP_BY_HOLD_TAP";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <0>;
+                        flavor = "hold-preferred";
+                        bindings = <&mo>, <&kp>;
+                };
+
+                td1: tap_dance_1 {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_1";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&mt LCTRL TAB>, <&kp ESC>;
+                };
+
+                td2: tap_dance_2 {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_SLASH";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp FSLH>, <&kp BSLH>;
+                };
+
+                td3: tap_dance_3 {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_TRATTINO";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp MINUS>, <&kp UNDER>;
+                };
         };
 
-        combo_tab {
+        combos {
+                combo_esc {
                 compatible = "zmk,combos";
                 timeout-ms = <50>;
-                key-positions = <7 8>;
-                bindings = <&kp TAB>;
-        };
+                key-positions = <1 2>;
+                bindings = <&kp ESC>;
+                };
 
-        combo_caps {
-                compatible = "zmk,combos";
-                timeout-ms = <50>;
-                key-positions = <13 22>;
-                bindings = <&kp CAPS>;
-        };
-    };
-};
+                combo_tab {
+                        compatible = "zmk,combos";
+                        timeout-ms = <50>;
+                        key-positions = <7 8>;
+                        bindings = <&kp TAB>;
+                };
 
-
-/ {
-    behaviors {
-        lt_impl: layer-tap-by-hold-tap {
-                compatible = "zmk,behavior-hold-tap";
-                label = "LAYER_TAP_BY_HOLD_TAP";
-                #binding-cells = <2>;
-                tapping-term-ms = <200>;
-                quick-tap-ms = <0>;
-                flavor = "hold-preferred";
-                bindings = <&mo>, <&kp>;
+                combo_caps {
+                        compatible = "zmk,combos";
+                        timeout-ms = <50>;
+                        key-positions = <13 22>;
+                        bindings = <&kp CAPS>;
+                };
         };
-
-        td1: tap_dance_1 {
-                compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_1";
-                #binding-cells = <0>;
-                tapping-term-ms = <200>;
-                bindings = <&mt LCTRL TAB>, <&kp ESC>;
-        };
-
-        td2: tap_dance_2 {
-                compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_SLASH";
-                #binding-cells = <0>;
-                tapping-term-ms = <200>;
-                bindings = <&kp FSLH>, <&kp BSLH>;
-        };
-
-        td3: tap_dance_3 {
-                compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_TRATTINO";
-                #binding-cells = <0>;
-                tapping-term-ms = <200>;
-                bindings = <&kp MINUS>, <&kp UNDER>;
-        };
-    };
 
         keymap {
                 compatible = "zmk,keymap";
@@ -85,7 +82,7 @@
                         bindings = <
    &none &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U  &kp I     &kp O   &kp P    &none
    &none &mt LSHIFT A &mt LCTRL S &mt LALT D &kp F &kp G   &kp H &kp J  &mt RALT K &mt RCTRL L &mt RSHIFT SEMI &none
-   &none &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp A &td2     &none
+   &none &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp . &td2     &none
                   &kp LGUI &lt 2 BSPC &kp SPACE   &kp RET &lt_impl 1 DEL &kp RALT
                         >;
                 };
