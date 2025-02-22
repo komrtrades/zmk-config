@@ -19,6 +19,17 @@
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
         };
+
+        td_slash_backslash: tap-dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SLASH_BACKSLASH";
+            // Single tap: outputs forward slash
+            bindings = <&kp FSLH>;
+            // Double tap: outputs backslash
+            tap_bindings = <&kp BSLS>;
+        };
+
+
     };
 
         keymap {
