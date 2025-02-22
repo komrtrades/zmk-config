@@ -37,20 +37,29 @@
                         bindings = <&kp FSLH>, <&kp BSLH>;
                 };
 
+                /* Tap-dance for - and _ */
+ //               td3: tap_dance_3 {
+ //                       compatible = "zmk,behavior-tap-dance";
+ //                       label = "TAP_DANCE_3";
+ //                       #binding-cells = <0>;
+ //                       tapping-term-ms = <200>;
+ //                       bindings = <&kp MINUS>, <&kp UNDER>;
+ //               };
 
+                /* Mod-Morph behavior to choose between td2 and td3 based on Shift */
+//                td_mod1: mod_morph {
+  //                      compatible = "zmk,behavior-mod-morph";
+//                        label = "MOD_MORPH_TAP_DANCE";
+//                        #binding-cells = <0>;
+//                        bindings = <&td2>, <&td3>;
+//                        mods = <(MOD_LSFT|MOD_RSFT)>;
+//                };
         };
+};
 
-        combos {
-                compatible = "zmk,combos";
 
-                combo_caps {
-                timeout-ms = <50>;
-                key-positions = <13 22>;
-                bindings = <&kp CAPS>;
-                };
 
-        };
-
+/ {
         keymap {
                 compatible = "zmk,keymap";
 
