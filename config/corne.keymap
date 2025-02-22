@@ -45,6 +45,30 @@
                         tapping-term-ms = <200>;
                         bindings = <&kp MINUS>, <&kp UNDER>;
                 };
+
+                td4: tap_dance_4 {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_PLUS";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp PLUS>, <&kp STAR>;
+                };
+
+                td5: tap_dance_5 {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_MINUS";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp MINUS>, <&kp FSLH>;                       
+                };
+
+                td6: tap_dance_6 {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_ZERO";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp N0>, <&kp EQUAL>;                        
+                };
         };
 
         combos {
@@ -97,15 +121,15 @@
 
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |      |     |     |  [  |  ]  |     |   | + * |  7  |  8  |  9  |     |      |
-// |      |     |     |  (  |  )  |     |   | - / |  4  |  5  |  6  |LSHFT|      |
+// |      |     |     |  [  |  ]  |     |   | + * |  7  |  8  |  9  | < > |      |
+// |      |  <  |  >  |  (  |  )  |     |   | - / |  4  |  5  |  6  |  ^  |      |
 // |      |     |     |  {  |  }  |     |   | 0 = |  1  |  2  |  3  | - _ |      |
 //                    |     |     |     |   |     |     |     |
 
                         bindings = <
-        &none   &none   &none   &kp LBKT        &kp RBKT        &none   &none        &kp N7          &kp N8          &kp N9          &none   &none
-        &none   &none   &none   &kp LPAR        &kp RPAR        &none   &none       &kp N4          &kp N5          &kp N6          &none   &none
-        &none   &none   &none   &kp LBRC        &kp RBRC        &none   &none        &kp N1          &kp N2          &kp N3          &td3    &none
+        &none   &none   &none   &kp LBKT        &kp RBKT        &none   &td4        &kp N7          &kp N8          &kp N9          &none   &none
+        &none   &none   &none   &kp LPAR        &kp RPAR        &none   &td5        &kp N4          &kp N5          &kp N6          &none   &none
+        &none   &none   &none   &kp LBRC        &kp RBRC        &none   &td6        &kp N1          &kp N2          &kp N3          &td3    &none
                                     &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
