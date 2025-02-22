@@ -73,13 +73,6 @@
                         key-positions = <13 22>;
                         bindings = <&kp CAPS>;
                 };
-
-                combo_semicolon {
-                        compatible = "zmk,combos";
-                        timeout-ms = <50>;
-                        key-positions = <33 34>;
-                        bindings = <&kp SEMI>;
-                };
         };
 
         keymap {
