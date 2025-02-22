@@ -71,6 +71,9 @@
                 bindings = <&kp MINUS>, <&kp UNDER>;
         };
 
+        &mt: modifier_tap {
+                "tap-preferred"
+        };
     };
 
         keymap {
