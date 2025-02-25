@@ -84,7 +84,7 @@
                 compatible = "zmk,combos";
                 timeout-ms = <50>;
                 key-positions = <1 2>;
-                bindings = <&kp ESC>;
+                bindings = <&kp A>;
                 };
 
                 combo_tab {
