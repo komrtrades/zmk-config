@@ -150,10 +150,10 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
 
                         bindings = <
-   &none  &none         &kp PAGE_UP     &kp UP          &kp PAGE_DOWN   &none           &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &none 
-   &none  &kp HOME      &kp LEFT        &kp DOWN        &kp RIGHT       &kp END         &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &none        
-   &none  &none         &none           &none           &none           &none           &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &none 
-                                        &kp LGUI &trans  &kp SPACE                              &kp RET   &kp DEL    &kp RALT
+   &none  &none         &kp PAGE_UP     &kp UP          &kp PAGE_DOWN   &none           &none           &none           &none           &none   &KP LSLCK &none 
+   &none  &kp HOME      &kp LEFT        &kp DOWN        &kp RIGHT       &kp END         &none           &mkp LCLK       &mkp RCLK       &none   &kp SLCK &none        
+   &none  &none         &none           &none           &none           &none           &none           &none           &none           &none   &none &none 
+                                        &trans  &trans  &trans                              &trans   &trans    &trans
                         >;
                 };
         };
