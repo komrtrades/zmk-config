@@ -150,8 +150,8 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
 
                         bindings = <
-   &none  &none         &kp PAGE_UP     &kp UP          &kp PAGE_DOWN   &none           &none           &none           &none           &none   &KP LSLCK &none 
-   &none  &kp HOME      &kp LEFT        &kp DOWN        &kp RIGHT       &kp END         &none           &mkp LCLK       &mkp RCLK       &none   &kp SLCK &none        
+   &none  &none         &kp PAGE_UP     &kp UP          &kp PAGE_DOWN   &none           &none           &none           &none           &none   &none &none 
+   &none  &kp HOME      &kp LEFT        &kp DOWN        &kp RIGHT       &kp END         &none           &mkp LCLK       &mkp RCLK       &none   &none &none        
    &none  &none         &none           &none           &none           &none           &none           &none           &none           &none   &none &none 
                                         &trans  &trans  &trans                              &trans   &trans    &trans
                         >;
