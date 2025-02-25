@@ -151,7 +151,7 @@
 
                         bindings = <
    &none  &none         &kp PAGE_UP     &kp UP          &kp PAGE_DOWN   &none           &none           &none           &none           &none   &none &none 
-   &none  &kp HOME      &kp LEFT        &kp DOWN        &kp RIGHT       &kp END         &none           &mkp LCLK       &mkp RCLK       &none   &none &none        
+   &none  &kp HOME      &kp LEFT        &kp DOWN        &kp RIGHT       &kp END         &none           &none       &none       &none   &none &none        
    &none  &none         &none           &none           &none           &none           &none           &none           &none           &none   &none &none 
                                         &trans  &trans  &trans                              &trans   &trans    &trans
                         >;
