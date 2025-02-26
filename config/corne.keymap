@@ -63,7 +63,7 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_SLASH";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <300>;
                         bindings = <&kp FSLH>, <&kp BSLH>;
                 };
 
@@ -71,7 +71,7 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_TRATTINO";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <300>;
                         bindings = <&kp MINUS>, <&kp UNDER>;
                 };
 
@@ -79,7 +79,7 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_PLUS";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <250>;
                         bindings = <&kp PLUS>, <&kp STAR>;
                 };
 
@@ -87,7 +87,7 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_MINUS";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <300>;
                         bindings = <&kp MINUS>, <&kp FSLH>;                       
                 };
 
@@ -95,7 +95,7 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_ZERO";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <250>;
                         bindings = <&kp N0>, <&kp EQUAL>;                        
                 };
 
@@ -103,7 +103,7 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_LTGT";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <250>;
                         bindings = <&kp LT>, <&kp GT>;
                 };
         };
