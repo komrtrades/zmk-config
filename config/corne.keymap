@@ -136,9 +136,9 @@
 //                    |     |     |     |   |     |     |     |
 
                         bindings = <
-        &none   &kp EXCL   &kp DLLR   &kp LBKT        &kp RBKT        &none           &td4        &kp N7          &kp N8          &kp N9          &td7        &none
-        &none   &kp LT  &kp GT  &kp LPAR        &kp RPAR        &none           &td5        &kp N4          &kp N5          &kp N6          &kp GRAVE   &none
-        &none   &kp AMPS   &kp PRCNT   &kp LBRC        &kp RBRC        &none           &td6        &kp N1          &kp N2          &kp N3          &td3        &none
+        &none   &kp EXCL  &kp DLLR   &kp LBKT    &kp RBKT   &none           &td4    &kp N7    &kp N8    &kp N9    &td7        &none
+        &none   &kp LT    &kp GT     &kp LPAR    &kp RPAR   &none           &td5    &kp N4    &kp N5    &kp N6    &kp GRAVE   &none
+        &none   &kp AMPS  &kp PRCNT  &kp LBRC    &kp RBRC   &none           &td6    &kp N1    &kp N2    &kp N3    &td3        &none
                          &kp LGUI     &trans       &kp SPACE                            &trans  &kp DEL   &trans
                         >;
                 };
@@ -152,20 +152,20 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
 
                         bindings = <
-   &none  &none         &kp PAGE_UP     &kp UP          &kp PAGE_DOWN   &none           &none           &none           &none           &none   &kp INS &none
-   &none  &kp HOME      &kp LEFT        &kp DOWN        &kp RIGHT       &kp END         &none           &none       &kp RALT       &kp RCTRL         &kp RSHIFT &none        
-   &none  &none         &none           &none           &none           &none           &none           &none           &none           &none   &none &none 
-                                        &kp LALT  &trans  &trans                              &trans   &trans    &trans
+   &none  &none         &kp PAGE_UP     &kp UP          &kp PAGE_DOWN   &none                  &none    &none    &none     &none       &kp INS      &none
+   &none  &kp HOME      &kp LEFT        &kp DOWN        &kp RIGHT       &kp END                &none    &none    &kp RALT  &kp RCTRL   &kp RSHIFT   &none        
+   &none  &none         &none           &none           &none           &none                  &none    &none    &none     &none       &none        &none 
+                                        &kp LALT  &trans  &trans                                     &trans   &trans    &trans
                         >;
                 };
 
 
                 function_layer {
                         bindings = <
-        &none  &none         &kp PAGE_UP     &kp UP          &kp PAGE_DOWN   &none      &kp K_MUTE     &kp C_VOL_UP           &kp C_VOL_DN           &kp C_BRI_UP   &kp C_BRI_DN &none
-   &none  &kp HOME      &kp LEFT        &kp DOWN        &kp RIGHT       &kp END         &none           &none       &kp RALT       &kp RCTRL         &kp RSHIFT &none        
-   &none  &none         &none           &none           &none           &none           &none           &none           &none           &none   &none &none 
-                                        &kp LALT  &kp LCTRL  &trans                              &trans   &trans    &trans
+   &none  &kp PRINTSCREEN &kp F7  &kp F8  &kp F9  &kp F10             &kp K_MUTE     &kp C_VOL_UP    &kp C_VOL_DN   &kp C_BRI_UP   &kp C_BRI_DN  &none
+   &none  &none           &kp F4  &kp F5  &kp F6  &kp F11             &none          &to 4           &to 5       &kp RCTRL      &to 6    &none        
+   &none  &none           &kp F1  &kp F2  &kp F2  &kp F12             &to 0          &to 1           &to 2          &to 3          &none         &none 
+                       &kp LALT  &kp LCTRL  &trans                           &trans   &trans    &trans
                         >;
                 };                
 
@@ -173,10 +173,10 @@
                 
                 writing_layer {
                         bindings = <
-        &none   &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P                   &none
-        &none   &kp A    &kp S     &kp D      &kp F           &kp G           &kp H           &kp J           &kp K      &kp L     &kp APOS         &none
-        &none   &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &td2                    &none
-                        &kp LCTRL                &kp LSHIFT              &kp SPACE                       &kp RET                 &lt_impl 2 BSPC         &kp RALT
+        &none   &kp Q  &kp W   &kp E    &kp R    &kp T           &kp Y    &kp U    &kp I        &kp O      &kp P      &none
+        &none   &kp A  &kp S   &kp D    &kp F    &kp G           &kp H    &kp J    &kp K        &kp L      &kp APOS   &none
+        &none   &kp Z  &kp X   &kp C    &kp V    &kp B           &kp N    &kp M    &kp COMMA    &kp DOT    &td2       &none
+                 &kp LCTRL   &kp LSHIFT   &kp SPACE                       &kp RET    &lt_impl 2 BSPC    &kp RALT
                         >;
                 };
 
