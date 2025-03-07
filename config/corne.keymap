@@ -37,43 +37,43 @@
                 };
 
                 combo_tolayer_0 {
-                        timeout-ms = <50>;
+                        timeout-ms = <150>;
                         key-positions = <13 14 15 30>;
                         bindings = <&to 0>;
                 };
 
                 combo_tolayer_1 {
-                        timeout-ms = <50>;
+                        timeout-ms = <150>;
                         key-positions = <13 14 15 31>;
                         bindings = <&to 1>;
                 };
 
                 combo_tolayer_2 {
-                        timeout-ms = <50>;
+                        timeout-ms = <150>;
                         key-positions = <13 14 15 32>;
                         bindings = <&to 2>;
                 };
 
                 combo_tolayer_3 {
-                        timeout-ms = <50>;
+                        timeout-ms = <150>;
                         key-positions = <13 14 15 33>;
                         bindings = <&to 3>;
                 };
 
                 combo_tolayer_4 {
-                        timeout-ms = <50>;
+                        timeout-ms = <150>;
                         key-positions = <13 14 15 19>;
                         bindings = <&to 4>;
                 };
 
                 combo_tolayer_5 {
-                        timeout-ms = <50>;
+                        timeout-ms = <150>;
                         key-positions = <13 14 15 20>;
                         bindings = <&to 5>;
                 };
 
                 combo_tolayer_6 {
-                        timeout-ms = <50>;
+                        timeout-ms = <150>;
                         key-positions = <13 14 15 21>;
                         bindings = <&to 6>;
                 };
@@ -211,7 +211,7 @@
 
                 function_layer {
                         bindings = <
-   &none  &kp PRINTSCREEN &kp F7  &kp F8  &kp F9  &kp F10             &kp K_MUTE     &kp C_VOL_UP    &kp C_VOL_DN   &kp C_BRI_UP   &kp C_BRI_DN  &none
+   &none  &kp PRINTSCREEN &kp F7  &kp F8  &kp F9  &kp F10             &kp K_MUTE     &kp C_VOL_DN    &kp C_VOL_UP   &kp C_BRI_DN     &kp C_BRI_UP  &none
    &none  &none           &kp F4  &kp F5  &kp F6  &kp F11             &none          &to 4           &to 5          &to 6          &none         &none        
    &none  &none           &kp F1  &kp F2  &kp F2  &kp F12             &to 0          &to 1           &to 2          &to 3          &none         &none 
                        &kp LALT  &lt_impl 1 LGUI  &trans                           &trans   &trans    &trans
