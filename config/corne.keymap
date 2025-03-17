@@ -10,10 +10,6 @@
 
 
 / {
-
-        &mt {
-                flavor = "balanced";
-        };
         
         combos {
                 compatible = "zmk,combos";
@@ -86,6 +82,16 @@
 
 
         behaviors {
+
+                bhm: balanced_homerow_mods {
+                        compatible = "zmk,behavior-hold-tap";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <200>;    // <---[[moderate duration]]
+                        quick-tap-ms = <0>;
+                        flavor = "balanced";
+                        bindings = <&kp>, <&kp>;
+                        };
+                };
 
                 lt_impl: layer-tap-by-hold-tap {
                         compatible = "zmk,behavior-hold-tap";
@@ -184,7 +190,7 @@
 
                         bindings = <
         &none   &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P                   &none
-        &none   &mt LSHIFT A    &mt LCTRL S     &mt LALT D      &kp F           &kp G           &kp H           &kp J           &mt RALT K      &mt RCTRL L     &mt RSHIFT APOS         &none
+        &none   &bhm LSHIFT A    &bhm LCTRL S     &bhm LALT D      &kp F           &kp G           &kp H           &kp J           &bhm RALT K      &bhm RCTRL L     &bhm RSHIFT APOS         &none
         &none   &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &tdtemp       &kp DOT         &td2                    &none
                         &kp LGUI                &lt_impl 1 LGUI              &kp SPACE                       &kp RET                 &lt_impl 2 BSPC         &kp RALT
                         >;
