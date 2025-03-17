@@ -81,9 +81,6 @@
 
 
         behaviors {
-                &mt {
-                        flavor = "balanced";
-                };
 
                 lt_impl: layer-tap-by-hold-tap {
                         compatible = "zmk,behavior-hold-tap";
