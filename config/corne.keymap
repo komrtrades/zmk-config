@@ -90,7 +90,6 @@
                         quick-tap-ms = <0>;
                         flavor = "balanced";
                         bindings = <&kp>, <&kp>;
-                        };
                 };
 
                 lt_impl: layer-tap-by-hold-tap {
