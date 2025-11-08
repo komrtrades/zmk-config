@@ -8,12 +8,11 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-
 / {
         
         combos {
                 compatible = "zmk,combos";
-                combo_cword {
+                combo_tab {
                         timeout-ms = <50>;
                         key-positions = <7 8>;
                         bindings = <&kp TAB>;
@@ -33,7 +32,7 @@
 
                 combo_semicolon {
                         timeout-ms = <50>;
-                        key-positions = <33 34>;
+                        key-positions = <32 33>;
                         bindings = <&kp SEMI>;
                 };
 
@@ -158,12 +157,12 @@
                         bindings = <&kp LT>, <&kp GT>;
                 };
 
-                tdtemp: tap_dance_temp {
+                tdcolon: tap_dance_colon {
                         compatible = "zmk,behavior-tap-dance";
-                        label = "TAP_DANCE_TEMP";
+                        label = "TAP_DANCE_COLON";
                         #binding-cells = <0>;
                         tapping-term-ms = <250>;
-                        bindings = <&kp COMMA>, <&kp DOT>, <&kp COLON>, <&kp SEMI>;
+                        bindings = <&kp DOT>, <&kp COLON>;
                 };
         };
 
@@ -190,7 +189,7 @@
                         bindings = <
         &none   &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P                   &none
         &none   &bhm LSHIFT A    &bhm LCTRL S     &bhm LALT D      &kp F           &kp G           &kp H           &kp J           &bhm RALT K      &bhm RCTRL L     &bhm RSHIFT APOS         &none
-        &none   &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &tdtemp       &kp DOT         &td2                    &none
+        &none   &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &tdcolon       &kp DOT         &td2                    &none
                         &kp LGUI                &lt_impl 1 LGUI              &kp SPACE                       &kp RET                 &lt_impl 2 BSPC         &kp RALT
                         >;
                 };
