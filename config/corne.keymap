@@ -81,7 +81,7 @@
 
                 combo_output_toggle {
                         timeout-ms = <200>;
-                        key-positions = <37 38 39 40 41 42>;
+                        key-positions = <36 37 38 39 40 41>;
                         bindings = <&out OUT_TOG>;
                 };
 
