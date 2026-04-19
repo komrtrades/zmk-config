@@ -1,6 +1,57 @@
 name: Build ZMK firmware
 on: [push, pull_request, workflow_dispatch]
 
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
+
+  auto-fix-on-failure:
+    runs-on: ubuntu-latest
+    needs: build
+    if: ${{ always() && needs.build.result == 'failure' && github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download current run logs
+        run: |
+          curl -L \
+            -H "Authorization: Bearer ${{ github.token }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/logs" \
+            -o logs.zip
+          unzip -o logs.zip -d logs
+
+      - name: Attempt automatic fix from logs
+        id: autofix
+        run: |
+          python3 scripts/zmk_autofix.py --logs-dir logs --repo-root . > autofix.out
+          cat autofix.out
+          CHANGED=$(grep '^changed=' autofix.out | tail -n1 | cut -d'=' -f2)
+          REASON=$(grep '^reason=' autofix.out | tail -n1 | cut -d'=' -f2-)
+          echo "changed=${CHANGED}" >> "$GITHUB_OUTPUT"
+          echo "reason=${REASON}" >> "$GITHUB_OUTPUT"
+
+      - name: Create auto-fix pull request
+        if: ${{ steps.autofix.outputs.changed == 'true' }}
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "ci(autofix): apply board compatibility fix from failed logs"
+          title: "ci(autofix): apply board compatibility fix"
+          body: |
+            This PR was created automatically after a failed firmware build.
+
+            - Parsed this run's logs for known ZMK board compatibility errors
+            - Applied safe board ID mapping in `build.yaml`
+            - Reason: `${{ steps.autofix.outputs.reason }}`
+          branch: ci/autofix-board-compat-${{ github.run_id }}
+          delete-branch: true
+
+      - name: Summary
+        run: |
+          echo "Auto-fix changed: ${{ steps.autofix.outputs.changed }}"
+          echo "Reason: ${{ steps.autofix.outputs.reason }}"
