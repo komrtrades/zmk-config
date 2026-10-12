@@ -1,0 +1,4 @@
+name: corne-rgb-status
+build:
+  cmake: .
+  kconfig: Kconfig

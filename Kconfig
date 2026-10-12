@@ -1,0 +1,9 @@
+config CORNE_RGB_STATUS_SCREEN
+    bool "Corne OLED RGB status indicator"
+    default y
+    depends on ZMK_DISPLAY && ZMK_RGB_UNDERGLOW && ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+    select LV_USE_LABEL
+    select LV_FONT_MONTSERRAT_16
+    select LV_FONT_MONTSERRAT_12
+    imply LV_USE_THEME_MONO if LV_Z_BITS_PER_PIXEL=1
+    imply ZMK_WIDGET_PERIPHERAL_STATUS
