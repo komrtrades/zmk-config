@@ -1,0 +1,5 @@
+// Standard Corne underglow: six WS2812-compatible LEDs per half.
+&led_strip {
+    chain-length = <6>;
+};
+

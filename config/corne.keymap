@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
         
@@ -219,14 +220,14 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |      |     | PGUP|  UP |PGDWN|     |   |     |     |     |     |     | INS  |
-// |      |INIZ | LFT | DWN | RGHT|FINE |   |     |LCLK |RCLK |     |SCRLK|      |
+// |      |     | PGUP|  UP |PGDWN|     |   |RGBon|EFF  |HUE  |BRT- |BRT+ |      |
+// |      |INIZ | LFT | DWN | RGHT|FINE |   | INS |LCLK |RCLK |     |SCRLK|      |
 // |      |     |     |     |     |     |   |  _  |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
 
                         bindings = <
-   &none  &none         &kp PAGE_UP     &kp UP          &kp PAGE_DOWN   &none                  &none    &none    &none     &none       &kp INS      &none
-   &none  &kp HOME      &kp LEFT        &kp DOWN        &kp RIGHT       &kp END                &none    &none    &kp RALT  &kp RCTRL   &kp RSHIFT   &none        
+   &none  &none         &kp PAGE_UP     &kp UP          &kp PAGE_DOWN   &none                  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none
+   &none  &kp HOME      &kp LEFT        &kp DOWN        &kp RIGHT       &kp END                &kp INS  &none    &kp RALT  &kp RCTRL   &kp RSHIFT   &none
    &none  &none         &none           &none           &none           &none                  &none    &none    &none     &none       &none        &none 
                                         &kp LALT  &lt_impl 1 LGUI  &trans                                     &trans   &lt_impl 2 BSPC     &trans
                         >;
@@ -256,3 +257,4 @@
 
         };
 };
+
